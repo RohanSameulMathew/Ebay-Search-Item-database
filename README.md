@@ -21,7 +21,22 @@ pip install argparse
 pip install requests
 pip install json
 
-
+```
+In order to enter the search term, you write this on command line:
 
 ```bash
-python ebay-dl.py
+python3 ebay-dl.py search-term
+```
+
+My inputs were:
+
+```bash
+python3 ebay-dl.py travis scott jordans
+python3 film camera
+python3 sushi micromallow
+```
+
+Here is a [link](https://github.com/mikeizbicki/cmc-csci040/tree/2025spring/project_03_webscraping#project-3-scraping-from-ebay) to the course project to which this project owes its allegiance.
+
+
+
