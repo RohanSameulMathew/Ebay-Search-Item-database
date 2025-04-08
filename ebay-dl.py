@@ -114,7 +114,7 @@ print(total_items)
 print('len(total_items)',len(total_items))
 
 #### FILE SETUP
-filename = '/Users/rohanmathew/Downloads/JSON product output/' + query + '.json'
+filename = '/Users/rohanmathew/Documents/GitHub/Ebay-Search-Item-database/' + query + '.json'
 with open(filename, 'w', encoding='ascii') as f:
     f.write(json.dumps(total_items))
 
