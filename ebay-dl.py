@@ -66,9 +66,9 @@ for page_number in range(1,int(args.num_pages)+1):
             status += text
 ###
         shipping = 0
-        s_price = ''
         tags_shipping = tag_item.select(".s-item__shipping.s-item__logisticsCost")
         for tag in tags_shipping:
+            s_price = ''
             text = tag.get_text(strip=True)
             for char in text:
                 if char in '0123456789':
@@ -80,13 +80,21 @@ for page_number in range(1,int(args.num_pages)+1):
                 shipping+=0
 ###     
         price = 0
-        str_p = ''
         tags_price = tag_item.select(".s-item__price")
         for tag in tags_price:
+            str_p = ''
             text = tag.get_text(strip=True)
-            for char in text:
-                if char in '0123456789':
-                    str_p += char
+            if 'to' in text:
+                parts = text.split('to')
+                for part in parts[1]:
+                    for char in part:
+                        if char in '0123456789':
+                            str_p += char
+            else:
+                for char in text:
+                    if char in '0123456789':
+                        str_p += char
+
             price += int(str_p)
 
 
